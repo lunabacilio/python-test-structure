@@ -8,7 +8,7 @@ def readInfo(usr, tkn, url, jira_filter):
     startAt = 0
     while startAt <= total:
 
-        jira_url = url + "rest/api/3/search?jql=" + jira_filter + '&startAt=' + str(startAt)
+        jira_url = url + "/rest/api/3/search?jql=" + jira_filter + '&startAt=' + str(startAt)
 
         auth = HTTPBasicAuth(usr, tkn)
 
