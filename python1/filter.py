@@ -29,5 +29,8 @@ def readInfo(usr, tkn, url, jira_filter):
         for issue in filter_response['issues']:
             issuekey = issue['key']
             print(issuekey)
+        
+        startAt += 50
+        total = filter_response['total']
 
     print('task finished')
