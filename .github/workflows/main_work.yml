@@ -24,3 +24,5 @@ jobs:
                 pip install -r python1/requirements.txt
             - name: running script
               run: python python1/main.py
+            - name: running script 2
+              run: python python2/main.py
