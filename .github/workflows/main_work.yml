@@ -1,0 +1,26 @@
+name: Main work
+
+on: 
+    workflow_dispatch:
+
+env:
+    JIRA_TKN: ${{ secrets.JIRA_TKN }}
+
+jobs:
+    script-run:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.11'
+            # You can test your matrix by printing the current Python version
+            - name: Display Python version
+              run: python -c "import sys; print(sys.version)"
+            - name: Installing dependencies
+              run: | 
+                python -m pip install --upgrade pip
+                pip install -r python1/requirements.txt
+            - name: running script
+              run: python python1/main.py
